@@ -1,0 +1,455 @@
+.main-container {
+  background-color: rgb(238, 238, 238);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+
+.nav-name {
+  padding: 40px;
+}
+
+/* -----------CONTROL---------- */
+
+.control {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  /* grid-template-columns: repeat(2, 1fr); */
+}
+
+.button {
+  margin-top: 5px;
+  margin-bottom: 7px;
+  margin-right: 5px;
+  font-size: 10px;
+  width: 120px;
+}
+
+.dropdown {
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.dropdowns {
+  width: auto;
+  display: flex;
+  height: 50px;
+  margin-right: 200px;
+}
+.pageButtons {
+  display: flex;
+  height: 50px;
+}
+/* --------------------- */
+
+.main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  background-color: rgb(238, 238, 238);
+}
+
+.dishes-title {
+  padding: 20px;
+  height: 80px;
+  font-size: 40px;
+}
+
+/* .pic-and-text-box {
+  border: solid red 5px;
+  margin-bottom: 200px;
+} */
+
+.food-box {
+  width: 250px;
+  background-image: linear-gradient(rgb(238, 238, 238), rgb(249, 249, 249));
+  border-radius: 15%;
+  text-align: center;
+  justify-self: center;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  margin-top: 10px;
+}
+
+.food-pic {
+  width: 220px;
+  height: 220px;
+  border-radius: 25%;
+}
+
+.food-name {
+  font-size: 18px;
+  text-align: center;
+  margin: 10px;
+  color: black;
+}
+
+.preview-text {
+  padding-left: 5px;
+  padding-right: 5px;
+  flex-basis: 60%;
+  margin-bottom: 20px;
+}
+
+.preview-ingredients {
+  font-weight: bold;
+}
+
+.preview-tag {
+  background-color: #ffe2ab;
+  opacity: 0.6;
+  color: black;
+  border-radius: 3px;
+  padding: 0px 4px;
+}
+
+/* DETAIl PAge */
+.top-box {
+  display: flex;
+  font-size: 20px;
+}
+
+.label-box {
+  padding: 10px;
+}
+
+.detail-ingredients {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* ------------------------------------------ */
+
+@media only screen and (max-width: 1400px) {
+  .main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: rgb(238, 238, 238);
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: rgb(238, 238, 238);
+  }
+  .food-box {
+    width: 230px;
+    height: 95%;
+    border-radius: 15%;
+    text-align: center;
+    justify-self: center;
+  }
+
+  .food-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 25%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: rgb(238, 238, 238);
+  }
+  .food-box {
+    width: 210px;
+
+    height: 95%;
+    border-radius: 15%;
+    text-align: center;
+    justify-self: center;
+    /* box-shadow: -30px 30px 20px rgba(0,0,0,0.3) */
+  }
+
+  .food-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 25%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: rgb(238, 238, 238);
+  }
+  .dishes-title {
+    text-align: center;
+  }
+  .control {
+    padding: 10px;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .pageButtons {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    width: 100vw;
+  }
+  .dropdowns {
+    width: 100vw;
+    display: flex;
+    height: 50px;
+
+    justify-content: center;
+  }
+
+  .button {
+    margin-top: 5px;
+    margin-bottom: 7px;
+    margin-right: 5px;
+    font-size: 10px;
+    width: 120px;
+  }
+
+  .dropdown {
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+}
+
+@media only screen and (max-width: 725px) {
+  .main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: rgb(238, 238, 238);
+  }
+
+  .food-box {
+    width: 190px;
+
+    height: 95%;
+    border-radius: 15%;
+    text-align: center;
+    justify-self: center;
+    /* box-shadow: -30px 30px 20px rgba(0,0,0,0.3) */
+  }
+
+  .food-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 25%;
+  }
+  .control {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .pageButtons {
+    width: 100vw;
+    display: flex;
+    /* grid-template-columns: repeat(1, 1fr); */
+    height: 50px;
+    justify-content: center;
+  }
+  .dropdowns {
+    width: 100vw;
+    display: flex;
+    height: 50px;
+
+    justify-content: center;
+  }
+
+  .button {
+    margin-top: 5px;
+    margin-bottom: 7px;
+    margin-right: 5px;
+    font-size: 10px;
+    width: 120px;
+  }
+
+  .dropdown {
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: rgb(238, 238, 238);
+  }
+
+  .food-box {
+    width: 170px;
+
+    height: 95%;
+    border-radius: 15%;
+    text-align: center;
+    justify-self: center;
+  }
+
+  .food-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 25%;
+  }
+  .control {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    height: 120px;
+  }
+  .pageButtons {
+    width: 100vw;
+    display: flex;
+    grid-template-columns: repeat(1, 1fr);
+    height: 50px;
+    justify-content: center;
+  }
+  .dropdowns {
+    width: 100vw;
+    display: flex;
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 0px;
+
+    height: 200px;
+    justify-content: center;
+  }
+
+  .button {
+    margin-top: 5px;
+    margin-bottom: 7px;
+    margin-right: 5px;
+    font-size: 10px;
+    width: 120px;
+    height: 38px;
+  }
+
+  .dropdown {
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: rgb(238, 238, 238);
+  }
+
+  .food-box {
+    width: 190px;
+
+    height: 95%;
+    border-radius: 15%;
+    text-align: center;
+    justify-self: center;
+  }
+
+  .food-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 25%;
+  }
+  .control {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    height: 120px;
+  }
+  .pageButtons {
+    width: 100vw;
+    display: flex;
+    grid-template-columns: repeat(1, 1fr);
+    height: 50px;
+    justify-content: center;
+  }
+  .dropdowns {
+    width: 100vw;
+    display: flex;
+    height: 50px;
+
+    justify-content: center;
+  }
+
+  .button {
+    margin-top: 5px;
+    margin-bottom: 7px;
+    margin-right: 5px;
+    font-size: 10px;
+    width: 120px;
+  }
+
+  .dropdown {
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: rgb(238, 238, 238);
+  }
+
+  .food-box {
+    width: 190px;
+
+    height: 95%;
+    border-radius: 15%;
+    text-align: center;
+    justify-self: center;
+  }
+
+  .food-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 25%;
+  }
+  .control {
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    height: 120px;
+  }
+  .pageButtons {
+    width: 100vw;
+    display: flex;
+    grid-template-columns: repeat(1, 1fr);
+    height: 50px;
+    justify-content: center;
+  }
+  .dropdowns {
+    width: 100vw;
+    display: flex;
+    height: 130px;
+    grid-template-columns: repeat(1, 1fr);
+
+    justify-content: center;
+  }
+
+  .button {
+    margin-top: 5px;
+    margin-bottom: 7px;
+    margin-right: 5px;
+    font-size: 10px;
+    width: 120px;
+    justify-self: center;
+  }
+
+  .dropdown {
+    margin-top: 5px;
+    margin-right: 5px;
+    justify-self: center;
+  }
+}
