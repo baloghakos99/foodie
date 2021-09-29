@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../css/Detail.css";
 
 export default class DetailedStarter extends React.Component {
@@ -39,7 +39,7 @@ export default class DetailedStarter extends React.Component {
             </div>
             <div className="detail-main">
               <div className="left">
-                <img src={food.recipe.image} className="img"></img>
+                <img src={food.recipe.image} className="img" alt=""></img>
                 <div className="ingredients-text">
                   <p className="detail-ingredients"> Ingredients:</p>{" "}
                   <ul>

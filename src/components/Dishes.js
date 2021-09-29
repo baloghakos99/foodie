@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavContext, TitleContext } from "../App";
 import Recipe from "./Recipe";
 import Dropdown from "react-bootstrap/Dropdown";
@@ -77,13 +77,13 @@ function Dishes() {
           });
           recipes.hits = hits;
           setRecipes(recipes);
-          setFetches([
-            ...fetches,
-            urlStart + `&dishType=${localStorage.nav}&imageSize=REGULAR`,
-          ]);
+          // setFetches([
+          //   ...fetches,
+          //   urlStart + `&dishType=${localStorage.nav}&imageSize=REGULAR`,
+          // ]);
           setLastClick("");
         });
-    } else if (fetches.length === 0) {
+    } else if (performance.navigation.type === 1) {
       console.log("na most itt van valami");
       fetch(JSON.parse(localStorage.getItem("lastFetch")))
         .then(function (response) {
@@ -92,18 +92,18 @@ function Dishes() {
         .then((recipes) => {
           let hits = recipes.hits.map((recipe) => {
             let id = recipe.recipe.uri.split("#")[1].split("_")[1];
-            // console.log(recipes);
             return { ...recipe, id: id };
           });
           recipes.hits = hits;
           setRecipes(recipes);
-          setFetches([
-            ...fetches,
-            JSON.parse(localStorage.getItem("lastFetch")),
-          ]);
+          // setFetches([
+          //   ...fetches,
+          //   JSON.parse(localStorage.getItem("lastFetch")),
+          // ]);
           setLastClick("");
         });
     } else {
+      console.log("dwdwedw");
       fetch(urlStart + `&dishType=${context}&imageSize=REGULAR`)
         .then(function (response) {
           return response.json();
@@ -111,19 +111,18 @@ function Dishes() {
         .then((recipes) => {
           let hits = recipes.hits.map((recipe) => {
             let id = recipe.recipe.uri.split("#")[1].split("_")[1];
-            // console.log(recipes);
             return { ...recipe, id: id };
           });
           recipes.hits = hits;
           setRecipes(recipes);
-          setFetches([
-            ...fetches,
-            urlStart + `&dishType=${context}&imageSize=REGULAR`,
-          ]);
+          // setFetches([
+          //   ...fetches,
+          //   urlStart + `&dishType=${context}&imageSize=REGULAR`,
+          // ]);
           setLastClick("");
         });
     }
-  }, [context]);
+  }, [context, urlStart]);
 
   useEffect(() => {
     if (title !== "") {
@@ -263,7 +262,7 @@ function Dishes() {
 
   const prevPage = () => {
     backToTop();
-    if (lastClick == "prevPage") {
+    if (lastClick === "prevPage") {
       fetch(fetches.pop())
         .then(function (response) {
           return response.json();
@@ -310,7 +309,7 @@ function Dishes() {
   return (
     <>
       <h1 className="dishes-title">
-        {title == "" ? JSON.parse(localStorage.title) : title}
+        {title === "" ? JSON.parse(localStorage.title) : title}
       </h1>
       <div className="control">
         <div className="pageButtons">
@@ -389,7 +388,6 @@ function Dishes() {
                       >
                         Prev Page
                       </button>
-                      <a href="#top"></a>{" "}
                       <button
                         href="#top"
                         onClick={nextPage}

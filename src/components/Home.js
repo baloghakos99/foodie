@@ -70,7 +70,7 @@ export default function Home() {
   };
   const prevPage = () => {
     backToTop();
-    if (lastClick == "prevPage") {
+    if (lastClick === "prevPage") {
       fetch(fetches.pop())
         .then(function (response) {
           return response.json();
@@ -160,7 +160,6 @@ export default function Home() {
           >
             Prev Page
           </button>
-          <a href="#top"></a>{" "}
           <button
             href="#top"
             onClick={nextPage}
