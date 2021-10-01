@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 const Recipe = ({ recipe }) => {
   const { label, image, cuisineType, mealType } = recipe.recipe;

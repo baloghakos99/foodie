@@ -4,6 +4,7 @@ import Recipe from "./Recipe";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import { foodTypes, mealTimes } from "../dropdownData";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 
 function Dishes() {
   const [title, setTitle] = useState("Title");
@@ -357,7 +358,8 @@ function Dishes() {
               <Dropdown.Item eventKey={type}>{type}</Dropdown.Item>
             ))}
           </DropdownButton>
-
+        </div>
+        <div className="submit">
           <button onClick={submit} className="homebutton">
             Submit
           </button>
