@@ -3,10 +3,97 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 /* NAVBAR */
 
 .nav-name {
   padding: 40px;
+}
+
+.navbar {
+  background-color: rgb(255, 196, 87);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin: 0;
+  padding: 0; */
+  /* height: 70px; */
+}
+
+.title {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+}
+
+.navbar-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.navbar-links-active ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  list-style: none;
+}
+
+.navbar-links-active li {
+  list-style: none;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: white;
+  /* padding: 1rem; */
+  display: block;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  margin-right: 10px;
+}
+
+.navbar-links-active li a {
+  text-decoration: none;
+  color: white;
+  /* padding: 1rem; */
+  display: block;
+}
+.navbar-links li a:hover {
+  background-color: rgb(255, 183, 49);
+  color: white;
+}
+
+.navbar-links-active li a:hover {
+  background-color: rgb(255, 183, 49);
+  color: white;
+}
+
+.toggle-button {
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 20%;
 }
 
 /* -----------CONTROL---------- */
@@ -230,6 +317,41 @@
 }
 
 @media only screen and (max-width: 725px) {
+  .toggle-button {
+    display: flex;
+  }
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar-links-active {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links-active ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-links-active li {
+    text-align: center;
+  }
+
+  .navbar-links-active li a {
+    padding: 6px;
+  }
+
+  .navbar-links-active {
+    display: flex;
+  }
+
   .main {
     width: 100%;
     display: grid;
