@@ -112,6 +112,15 @@ export default function App() {
                     <a
                       onClick={() => setNavContext("Starter", "Starters")}
                       className="nav-link"
+                      href="/"
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      onClick={() => setNavContext("Starter", "Starters")}
+                      className="nav-link"
                       href="/starters"
                     >
                       Starters
