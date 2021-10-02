@@ -4,11 +4,10 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
-.header {
-  background-color: aqua;
-  position: fixed;
-  width: 100vw;
+.control {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .homebutton {
@@ -49,16 +48,19 @@
 }
 /* -----Middle----- */
 .home-empty {
-  /* position: absolute;
-  top: 250px;
-  width: 100vw; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
+  /* 
   margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 }
 
 .home-title-empty {
