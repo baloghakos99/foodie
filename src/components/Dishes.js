@@ -14,7 +14,6 @@ function Dishes() {
 
   const [recipes, setRecipes] = useState("");
   const [fetches, setFetches] = useState([]);
-  const [lastClick, setLastClick] = useState("");
   const [selectedFoodType, setFoodType] = useState("Select cuisine type");
   const [selectedMealTime, setMealTime] = useState("Select meal time");
   const [next, setNext] = useState(false);
@@ -57,6 +56,7 @@ function Dishes() {
     } else {
       console.log("nincs fetch");
     }
+    console.log(fetches);
   }, [fetches]);
 
   useEffect(() => {
@@ -78,11 +78,10 @@ function Dishes() {
           });
           recipes.hits = hits;
           setRecipes(recipes);
-          // setFetches([
-          //   ...fetches,
-          //   urlStart + `&dishType=${localStorage.nav}&imageSize=REGULAR`,
-          // ]);
-          setLastClick("");
+          setFetches([
+            ...fetches,
+            urlStart + `&dishType=${localStorage.nav}&imageSize=REGULAR`,
+          ]);
         });
     } else if (performance.navigation.type === 1) {
       console.log("na most itt van valami");
@@ -97,11 +96,10 @@ function Dishes() {
           });
           recipes.hits = hits;
           setRecipes(recipes);
-          // setFetches([
-          //   ...fetches,
-          //   JSON.parse(localStorage.getItem("lastFetch")),
-          // ]);
-          setLastClick("");
+          setFetches([
+            ...fetches,
+            JSON.parse(localStorage.getItem("lastFetch")),
+          ]);
         });
     } else {
       console.log("dwdwedw");
@@ -116,11 +114,10 @@ function Dishes() {
           });
           recipes.hits = hits;
           setRecipes(recipes);
-          // setFetches([
-          //   ...fetches,
-          //   urlStart + `&dishType=${context}&imageSize=REGULAR`,
-          // ]);
-          setLastClick("");
+          setFetches([
+            ...fetches,
+            urlStart + `&dishType=${context}&imageSize=REGULAR`,
+          ]);
         });
     }
   }, [context, urlStart]);
@@ -156,7 +153,6 @@ function Dishes() {
             urlStart +
               `&cuisineType=${selectedFoodType}&dishType=${context}&imageSize=REGULAR`,
           ]);
-          setLastClick("");
         });
     }
 
@@ -179,7 +175,6 @@ function Dishes() {
             ...fetches,
             urlStart + `&dishType=${context}&imageSize=REGULAR`,
           ]);
-          setLastClick("");
         });
     }
 
@@ -207,7 +202,6 @@ function Dishes() {
             urlStart +
               `&cuisineType=${selectedFoodType}&mealType=${selectedMealTime}&dishType=${context}&imageSize=REGULAR`,
           ]);
-          setLastClick("");
         });
     }
 
@@ -234,7 +228,6 @@ function Dishes() {
             urlStart +
               `&mealType=${selectedMealTime}&dishType=${context}&imageSize=REGULAR`,
           ]);
-          setLastClick("");
         });
     }
   };
@@ -254,8 +247,6 @@ function Dishes() {
           targets.hits = hits;
           setRecipes(targets);
           setFetches([...fetches, recipes._links.next.href]);
-
-          setLastClick("");
         });
     }
     setPrev(true);
@@ -263,22 +254,10 @@ function Dishes() {
 
   const prevPage = () => {
     backToTop();
-    if (lastClick === "prevPage") {
-      fetch(fetches.pop())
-        .then(function (response) {
-          return response.json();
-        })
-        .then((recipes) => {
-          let hits = recipes.hits.map((recipe) => {
-            let id = recipe.recipe.uri.split("#")[1].split("_")[1];
-            return { ...recipe, id: id };
-          });
-          recipes.hits = hits;
-          setRecipes(recipes);
-        });
-      setLastClick("prevPage");
-    }
+
     fetches.pop();
+
+    let fetchkendo = fetches[fetches.length - 1];
     fetch(fetches.pop())
       .then(function (response) {
         return response.json();
@@ -291,7 +270,7 @@ function Dishes() {
         recipes.hits = hits;
         setRecipes(recipes);
       });
-    setLastClick("prevPage");
+    setFetches([...fetches, fetchkendo]);
   };
 
   const changeMealTime = (e) => {
@@ -429,6 +408,5 @@ export default Dishes;
 //         ...fetches,
 //         JSON.parse(localStorage.getItem("lastFetch")),
 //       ]);
-//       setLastClick("");
 //     });
 // }

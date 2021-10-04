@@ -10,7 +10,6 @@ export default function Home() {
   const [prev, setPrev] = useState(false);
   const [recipes, setRecipes] = useState("");
   const [fetches, setFetches] = useState([]);
-  const [lastClick, setLastClick] = useState("");
 
   useEffect(() => {
     if (recipes.from === 1) {
@@ -44,7 +43,6 @@ export default function Home() {
         recipes.hits = hits;
         setRecipes(recipes);
         setFetches([...fetches, url]);
-        setLastClick("");
       });
   };
   const nextPage = () => {
@@ -62,30 +60,17 @@ export default function Home() {
           targets.hits = hits;
           setRecipes(targets);
           setFetches([...fetches, recipes._links.next.href]);
-
-          setLastClick("");
         });
     }
     setPrev(true);
+    console.log(fetches);
   };
   const prevPage = () => {
     backToTop();
-    if (lastClick === "prevPage") {
-      fetch(fetches.pop())
-        .then(function (response) {
-          return response.json();
-        })
-        .then((recipes) => {
-          let hits = recipes.hits.map((recipe) => {
-            let id = recipe.recipe.uri.split("#")[1].split("_")[1];
-            return { ...recipe, id: id };
-          });
-          recipes.hits = hits;
-          setRecipes(recipes);
-        });
-      setLastClick("prevPage");
-    }
+
     fetches.pop();
+
+    let fetchkendo = fetches[fetches.length - 1];
     fetch(fetches.pop())
       .then(function (response) {
         return response.json();
@@ -98,7 +83,7 @@ export default function Home() {
         recipes.hits = hits;
         setRecipes(recipes);
       });
-    setLastClick("prevPage");
+    setFetches([...fetches, fetchkendo]);
   };
   const onChange = (e) => {
     setSearch(e.target.value);

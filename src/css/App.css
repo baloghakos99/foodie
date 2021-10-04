@@ -6,6 +6,7 @@
 * {
   box-sizing: border-box;
   font-family: "Indie Flower", cursive;
+  /* background-color: rgb(238, 238, 238); */
 }
 
 body {
@@ -34,14 +35,19 @@ body {
   margin: 0.5rem;
   color: white;
   /* margin-left: 2rem; */
+  background-color: rgb(255, 196, 87);
 }
 
 .navbar-links ul {
+  background-color: rgb(255, 196, 87);
+
   margin: 0;
   padding: 0;
   display: flex;
 }
 .navbar-links-active ul {
+  background-color: rgb(255, 196, 87);
+
   margin: 0;
   padding: 0;
   display: flex;
@@ -49,14 +55,18 @@ body {
 
 .navbar-links li {
   list-style: none;
+  background-color: rgb(255, 196, 87);
 }
 
 .navbar-links-active li {
   list-style: none;
+  background-color: rgb(255, 196, 87);
 }
 
 .navbar-links li a {
   text-decoration: none;
+  background-color: rgb(255, 196, 87);
+
   color: white;
   /* padding: 1rem; */
   display: block;
@@ -67,6 +77,8 @@ body {
 
 .navbar-links-active li a {
   text-decoration: none;
+  background-color: rgb(255, 196, 87);
+
   color: white;
   /* padding: 1rem; */
   display: block;
