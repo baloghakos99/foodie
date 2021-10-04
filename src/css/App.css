@@ -317,7 +317,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 725px) {
+@media screen and (max-width: 750px) {
   .toggle-button {
     display: flex;
   }
@@ -352,7 +352,9 @@ body {
   .navbar-links-active {
     display: flex;
   }
+}
 
+@media only screen and (max-width: 725px) {
   .main {
     width: 100%;
     display: grid;
@@ -596,13 +598,18 @@ body {
     background-color: rgb(238, 238, 238);
   }
 
+  .pic-and-text-box {
+    text-align: center;
+  }
+
   .food-box {
-    width: 230px;
+    width: 400px;
 
     height: 95%;
     border-radius: 15%;
     text-align: center;
     justify-self: center;
+    background-color: brown;
   }
 
   .food-pic {

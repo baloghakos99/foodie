@@ -316,13 +316,13 @@ function Dishes() {
         <div className="pageButtons">
           <button
             onClick={prevPage}
-            className={prev ? "homebutton" : "cantsee"}
+            className={prev ? "homebutton pagebutton" : "cantsee"}
           >
             Prev Page
           </button>
           <button
             onClick={nextPage}
-            className={next ? "homebutton" : "cantsee"}
+            className={next ? "homebutton pagebutton" : "cantsee"}
           >
             Next Page
           </button>
@@ -360,7 +360,7 @@ function Dishes() {
           </DropdownButton>
         </div>
         <div className="submit">
-          <button onClick={submit} className="homebutton">
+          <button onClick={submit} className="homebutton sub ">
             Submit
           </button>
         </div>
@@ -383,17 +383,17 @@ function Dishes() {
                         <div></div>
                       )}
                     </div>
-                    <div className="bottom-buttons">
+                    <div className="bottom-buttons ">
                       <button
                         onClick={prevPage}
-                        className={prev ? "homebutton" : "cantsee"}
+                        className={prev ? "homebutton pagebutton" : "cantsee"}
                       >
                         Prev Page
                       </button>
                       <button
                         href="#top"
                         onClick={nextPage}
-                        className={next ? "homebutton" : "cantsee"}
+                        className={next ? "homebutton pagebutton" : "cantsee"}
                       >
                         Next Page
                       </button>

@@ -1,13 +1,12 @@
 .home-main {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 }
 
-.control {
+.home-control {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .homebutton {
@@ -117,6 +116,13 @@
   outline: 0px;
   margin: 10px;
 }
+@media only screen and (max-width: 1550px) {
+  .home-main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
 
 @media only screen and (max-width: 1400px) {
   .home-main {
@@ -191,6 +197,13 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
+
+  .home-control {
+    padding: 10px;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
   .homeButtons {
     display: flex;
     height: 50px;
@@ -202,6 +215,10 @@
     height: 50px;
 
     justify-content: center;
+  }
+
+  .searchbutton {
+    margin-top: 8px;
   }
 
   .button {
@@ -270,6 +287,11 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
+  .home-control {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 @media only screen and (max-width: 550px) {
@@ -317,5 +339,89 @@
     width: 160px;
     height: 160px;
     border-radius: 25%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .home-main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .pic-and-text-box {
+    text-align: center;
+  }
+
+  .food-box {
+    width: 270px;
+
+    height: 95%;
+    border-radius: 15%;
+    text-align: center;
+    justify-self: center;
+  }
+
+  .food-pic {
+    width: 240px;
+    height: 240px;
+    border-radius: 25%;
+  }
+  .control {
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    height: 120px;
+  }
+  /* .home-control {
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    height: 120px;
+  } */
+  .pageButtons {
+    width: 100vw;
+    display: flex;
+    grid-template-columns: repeat(1, 1fr);
+    height: 50px;
+    justify-content: center;
+  }
+  .dropdowns {
+    width: 100vw;
+    display: flex;
+    grid-template-columns: repeat(1, 1fr);
+
+    justify-content: space-evenly;
+  }
+
+  .button {
+    margin-top: 5px;
+    margin-bottom: 7px;
+    margin-right: 5px;
+    font-size: 10px;
+    width: 120px;
+    justify-self: center;
+  }
+
+  .dropdown {
+    margin-top: 5px;
+    margin-right: 10px;
+    justify-self: center;
+  }
+
+  .sub {
+    margin-top: 5px;
+  }
+  .pagebutton {
+    /* height: 50px; */
+    width: 120px;
   }
 }

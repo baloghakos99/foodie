@@ -112,8 +112,10 @@ export default function Home() {
     <>
       <div className={empty ? "backgrounder-empty" : "backgrounder"}>
         <div className={empty ? "home-empty" : "topbar"}>
-          <h1 className={empty ? "home-title-empty" : "home-title"}>Foodie</h1>
-          <div className="control">
+          <h1 className={empty ? "home-title-empty" : "home-title"}>
+            Find a recipe!
+          </h1>
+          <div className="home-control">
             <div
               className={
                 empty ? "search-and-button-empty" : "search-and-button"
@@ -125,20 +127,20 @@ export default function Home() {
                 placeholder="Find a recipe"
                 onChange={onChange}
               ></input>
-              <button className="homebutton" onClick={getData}>
+              <button className="homebutton searchbutton" onClick={getData}>
                 Search
               </button>
             </div>
             <div className="homeButtons">
               <button
                 onClick={prevPage}
-                className={prev ? "homebutton" : "cantsee"}
+                className={prev ? "homebutton pagebutton" : "cantsee"}
               >
                 Prev Page
               </button>
               <button
                 onClick={nextPage}
-                className={next ? "homebutton" : "cantsee"}
+                className={next ? "homebutton pagebutton" : "cantsee"}
               >
                 Next Page
               </button>
@@ -156,14 +158,14 @@ export default function Home() {
         <div className="bottom-buttons">
           <button
             onClick={prevPage}
-            className={prev ? "homebutton" : "cantsee"}
+            className={prev ? "homebutton pagebutton" : "cantsee"}
           >
             Prev Page
           </button>
           <button
             href="#top"
             onClick={nextPage}
-            className={next ? "homebutton" : "cantsee"}
+            className={next ? "homebutton pagebutton" : "cantsee"}
           >
             Next Page
           </button>
