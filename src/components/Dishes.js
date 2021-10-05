@@ -35,8 +35,8 @@ function Dishes() {
   }, [recipes]);
 
   useEffect(() => {
-    setFoodType(localStorage.foodType);
-    setMealTime(localStorage.mealTime);
+    // setFoodType(localStorage.foodType);
+    // setMealTime(localStorage.mealTime);
     const data = localStorage.getItem("context");
     const localTitle = localStorage.getItem("title");
     if (localTitle) {
@@ -46,6 +46,16 @@ function Dishes() {
     if (data) {
       setContext(JSON.parse(data));
     }
+
+    // if (performance.navigation.type === 1) {
+    //   console.log("refresh");
+    //   console.log(localStorage.foodType);
+    //   console.log(selectedFoodType);
+
+    //   setFoodType(localStorage.foodType);
+    //   setMealTime(localStorage.mealTime);
+    //   console.log(selectedFoodType);
+    // }
   }, []);
 
   useEffect(() => {
@@ -317,7 +327,7 @@ function Dishes() {
             key={"a"}
             id={`dropdown-variants-Secondary`}
             variant={"Secondary".toLowerCase()}
-            title={selectedFoodType}
+            title={localStorage.foodType}
           >
             <Dropdown.Item eventKey={"Select cuisine type"}>
               {"Select cuisine type"}
@@ -332,7 +342,7 @@ function Dishes() {
             key={"b"}
             id={`dropdown-variants-Secondary`}
             variant={"Secondary".toLowerCase()}
-            title={selectedMealTime}
+            title={localStorage.mealTime}
           >
             <Dropdown.Item eventKey={"Select meal time"}>
               {"Select meal time"}

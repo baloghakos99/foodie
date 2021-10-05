@@ -43,7 +43,10 @@ export default function App() {
         <NavContext.Provider value={navContext}>
           <TitleContext.Provider value={title}>
             <nav className="navbar">
-              <div className="title">Foodie</div>
+              <div className="title">
+                {" "}
+                <a href="/">Foodie</a>
+              </div>
               <a href="#" class="toggle-button" onClick={() => valami()}>
                 <span class="bar"></span>
                 <span class="bar"></span>
