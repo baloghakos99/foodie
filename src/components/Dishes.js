@@ -50,13 +50,13 @@ function Dishes() {
 
   useEffect(() => {
     if (fetches.length !== 0) {
-      console.log("van fetch");
-      localStorage.setItem("lastFetch", JSON.stringify(fetches.slice(-1)));
+      localStorage.setItem(
+        "lastFetch",
+        JSON.stringify(fetches[fetches.length - 1])
+      );
       localStorage.setItem("fetches", JSON.stringify(fetches));
     } else {
-      console.log("nincs fetch");
     }
-    console.log(fetches);
   }, [fetches]);
 
   useEffect(() => {
@@ -65,7 +65,6 @@ function Dishes() {
     localStorage.setItem("context", JSON.stringify(context));
 
     if (localStorage.lastFetch === "") {
-      console.log("halo");
       fetch(urlStart + `&dishType=${localStorage.nav}&imageSize=REGULAR`)
         .then()
         .then(function (response) {
@@ -84,7 +83,6 @@ function Dishes() {
           ]);
         });
     } else if (performance.navigation.type === 1) {
-      console.log("na most itt van valami");
       fetch(JSON.parse(localStorage.getItem("lastFetch")))
         .then(function (response) {
           return response.json();
@@ -96,13 +94,21 @@ function Dishes() {
           });
           recipes.hits = hits;
           setRecipes(recipes);
-          setFetches([
-            ...fetches,
-            JSON.parse(localStorage.getItem("lastFetch")),
-          ]);
+
+          let savedFetches = JSON.parse(localStorage.getItem("fetches"));
+
+          setFetches(savedFetches);
+
+          if (localStorage.fetches.length > 1) {
+            setPrev(true);
+          }
+
+          // setFetches([
+          //   ...fetches,
+          //   JSON.parse(localStorage.getItem("lastFetch")),
+          // ]);
         });
     } else {
-      console.log("dwdwedw");
       fetch(urlStart + `&dishType=${context}&imageSize=REGULAR`)
         .then(function (response) {
           return response.json();
@@ -141,7 +147,6 @@ function Dishes() {
           return response.json();
         })
         .then((recipes) => {
-          // console.log(recipes);
           let hits = recipes.hits.map((recipe) => {
             let id = recipe.recipe.uri.split("#")[1].split("_")[1];
             return { ...recipe, id: id };
@@ -192,7 +197,6 @@ function Dishes() {
         .then((recipes) => {
           let hits = recipes.hits.map((recipe) => {
             let id = recipe.recipe.uri.split("#")[1].split("_")[1];
-            // console.log(recipes);
             return { ...recipe, id: id };
           });
           recipes.hits = hits;
@@ -391,7 +395,6 @@ function Dishes() {
 export default Dishes;
 
 // (fetches.length === 0) {
-//   console.log("na most itt van valami");
 //   fetch(JSON.parse(localStorage.getItem("lastFetch")))
 //     .then(function (response) {
 //       return response.json();
@@ -399,7 +402,6 @@ export default Dishes;
 //     .then((recipes) => {
 //       let hits = recipes.hits.map((recipe) => {
 //         let id = recipe.recipe.uri.split("#")[1].split("_")[1];
-//         // console.log(recipes);
 //         return { ...recipe, id: id };
 //       });
 //       recipes.hits = hits;
