@@ -19,17 +19,11 @@ export default class DetailedStarter extends React.Component {
         return response.json();
       })
 
-      .then((recipe) =>
-        this.setState(
-          (state) => ({ actualStarter: recipe }),
-          console.log(recipe)
-        )
-      );
+      .then((recipe) => this.setState((state) => ({ actualStarter: recipe })));
   }
 
   render() {
     let food = this.state.actualStarter;
-    // console.log(food.recipe.totalDaily);
     return (
       <>
         {Object.keys(food).length > 0 ? (
@@ -103,78 +97,6 @@ export default class DetailedStarter extends React.Component {
                 </table>
               </div>
             </div>
-
-            {/* <div className="top-box">
-              <img src={food.recipe.image}></img>
-              <div className="label-box">
-                {food.recipe.healthLabels.map((label) => (
-                  <span className="health-label">{label} </span>
-                ))}
-                <br></br> <br></br>
-                <span className="detail-ingredients"> Ingredients:</span>{" "}
-                {food.recipe.ingredients[0].text}
-              </div>
-            </div>
-            <div className="tables">
-              <div>
-                <table>
-                  <tr>
-                    <td>Cuisine type:</td>
-                    <td>{food.recipe.cuisineType}</td>
-                  </tr>
-                  <tr>
-                    <td>Cautions:</td>
-                    <td>
-                      {food.recipe.cautions.length === 0
-                        ? "-"
-                        : food.recipe.cautions.map((cat) => `${cat}, `)}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Dish type:</td>
-                    <td>{food.recipe.dishType}</td>
-                  </tr>
-                  <tr>
-                    <td>Diet labels:</td>
-                    <td>{food.recipe.dietLabels.map((cat) => `${cat}, `)}</td>
-                  </tr>
-                </table>
-              </div>
-              <div>
-                <table>
-                  <tr>
-                    <th>Food</th>
-                    <th>Quantity</th>
-                    <th>Unit</th>
-                  </tr>
-                  {food.recipe.ingredients.map((ing) => (
-                    <tr>
-                      <td>{ing.food}</td>
-                      <td>{ing.quantity}</td>
-                      <td>
-                        {ing.measure === "<unit>" ? "piece" : ing.measure}
-                      </td>
-                    </tr>
-                  ))}
-                </table>
-              </div>
-              <div>
-                <table>
-                  <tr>
-                    <th>Nutrient</th>
-                    <th>Quantity</th>
-                    <th>Unit</th>
-                  </tr>
-                  {food.recipe.digest.map((nut) => (
-                    <tr>
-                      <td>{nut.label}</td>
-                      <td>{nut.total.toFixed(4)}</td>
-                      <td>{nut.unit}</td>
-                    </tr>
-                  ))}
-                </table>
-              </div>
-            </div> */}
           </div>
         ) : (
           <div></div>

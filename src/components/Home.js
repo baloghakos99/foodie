@@ -12,6 +12,43 @@ export default function Home() {
   const [fetches, setFetches] = useState([]);
 
   useEffect(() => {
+    if (fetches.length !== 0) {
+      localStorage.setItem(
+        "lastFetch",
+        JSON.stringify(fetches[fetches.length - 1])
+      );
+      localStorage.setItem("fetches", JSON.stringify(fetches));
+    }
+    // if (performance.navigation.type === 1) {
+    //   fetch(JSON.parse(localStorage.getItem("lastFetch")))
+    //     .then(function (response) {
+    //       return response.json();
+    //     })
+    //     .then((recipes) => {
+    //       let hits = recipes.hits.map((recipe) => {
+    //         let id = recipe.recipe.uri.split("#")[1].split("_")[1];
+    //         return { ...recipe, id: id };
+    //       });
+    //       recipes.hits = hits;
+    //       setRecipes(recipes);
+
+    //       let savedFetches = JSON.parse(localStorage.getItem("fetches"));
+
+    //       setFetches(savedFetches);
+
+    //       if (localStorage.fetches.length > 1) {
+    //         setPrev(true);
+    //       }
+
+    //       // setFetches([
+    //       //   ...fetches,
+    //       //   JSON.parse(localStorage.getItem("lastFetch")),
+    //       // ]);
+    //     });
+    // }
+  }, [fetches]);
+
+  useEffect(() => {
     if (recipes.from === 1) {
       setPrev(false);
     }
@@ -63,7 +100,6 @@ export default function Home() {
         });
     }
     setPrev(true);
-    console.log(fetches);
   };
   const prevPage = () => {
     backToTop();
