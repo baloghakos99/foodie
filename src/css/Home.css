@@ -378,13 +378,13 @@
     height: 240px;
     border-radius: 25%;
   }
-  .control {
+  /* .control {
     width: auto;
     height: auto;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     height: 120px;
-  }
+  } */
   /* .home-control {
     width: auto;
     height: auto;
@@ -392,20 +392,20 @@
     grid-template-columns: repeat(1, 1fr);
     height: 120px;
   } */
-  .pageButtons {
+  /* .pageButtons {
     width: 100vw;
     display: flex;
     grid-template-columns: repeat(1, 1fr);
     height: 50px;
     justify-content: center;
-  }
-  .dropdowns {
+  } */
+  /* .dropdowns {
     width: 100vw;
     display: flex;
     grid-template-columns: repeat(1, 1fr);
 
     justify-content: center;
-  }
+  } */
 
   .button {
     margin-top: 5px;

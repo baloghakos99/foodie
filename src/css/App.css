@@ -5,7 +5,8 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Indie Flower", cursive;
+  /* font-family: "Indie Flower", cursive; */
+  font-family: "Kalam", cursive;
   /* background-color: rgb(238, 238, 238); */
 }
 
@@ -310,10 +311,10 @@ body {
     display: flex;
     height: 50px;
     justify-content: center;
-    width: 100vw;
+    /* width: 100vw; */
   }
   .dropdowns {
-    width: 100vw;
+    width: auto;
     display: flex;
     height: 50px;
 
@@ -404,14 +405,14 @@ body {
     grid-template-columns: repeat(1, 1fr);
   }
   .pageButtons {
-    width: 100vw;
+    width: auto;
     display: flex;
     /* grid-template-columns: repeat(1, 1fr); */
     height: 50px;
     justify-content: center;
   }
   .dropdowns {
-    width: 100vw;
+    width: auto;
     display: flex;
     height: 50px;
 
@@ -464,14 +465,14 @@ body {
     height: 120px;
   }
   .pageButtons {
-    width: 100vw;
+    width: auto;
     display: flex;
     grid-template-columns: repeat(1, 1fr);
     height: 50px;
     justify-content: center;
   }
   .dropdowns {
-    width: 100vw;
+    width: auto;
     display: flex;
     grid-template-columns: repeat(1, 1fr);
     margin-left: 0px;
@@ -523,14 +524,14 @@ body {
     height: 120px;
   }
   .pageButtons {
-    width: 100vw;
+    width: auto;
     display: flex;
     grid-template-columns: repeat(1, 1fr);
     height: 50px;
     justify-content: center;
   }
   .dropdowns {
-    width: 100vw;
+    width: auto;
     display: flex;
     height: 50px;
 
@@ -581,14 +582,14 @@ body {
     height: 120px;
   }
   .pageButtons {
-    width: 100vw;
+    width: auto;
     display: flex;
     grid-template-columns: repeat(1, 1fr);
     height: 50px;
     justify-content: center;
   }
   .dropdowns {
-    width: 100vw;
+    width: auto;
     display: flex;
     grid-template-columns: repeat(1, 1fr);
 
@@ -645,14 +646,15 @@ body {
     height: 120px;
   }
   .pageButtons {
-    width: 100vw;
+    width: auto;
     display: flex;
     grid-template-columns: repeat(1, 1fr);
     height: 50px;
     justify-content: center;
+    align-self: center;
   }
   .dropdowns {
-    width: 100vw;
+    width: auto;
     display: flex;
     grid-template-columns: repeat(1, 1fr);
 
@@ -672,9 +674,5 @@ body {
     margin-top: 5px;
     margin-right: 5px;
     justify-self: center;
-  }
-
-  .submit {
-    height: 2100px;
   }
 }
