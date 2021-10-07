@@ -120,6 +120,7 @@
 
   outline: 0px;
   margin: 10px;
+  margin-left: 20px;
 }
 @media only screen and (max-width: 1550px) {
   .home-main {
@@ -195,6 +196,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background-color: rgb(238, 238, 238);
+  }
+  .searchbar {
+    margin-left: 0px;
   }
   .control {
     padding: 10px;

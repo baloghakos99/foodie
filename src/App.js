@@ -30,6 +30,7 @@ export default function App() {
   const setNavContext = (selectedNav, title) => {
     setContext(selectedNav);
     localStorage.setItem("nav", selectedNav);
+
     localStorage.setItem("foodType", "Select cuisine type");
     localStorage.setItem("mealTime", "Select meal time");
     localStorage.setItem("lastFetch", "");
@@ -45,7 +46,9 @@ export default function App() {
             <nav className="navbar">
               <div className="title">
                 {" "}
-                <a href="/">Foodie</a>
+                <a className="navbar-title" href="/">
+                  Foodie
+                </a>
               </div>
               <a href="#" class="toggle-button" onClick={() => valami()}>
                 <span class="bar"></span>
@@ -54,15 +57,6 @@ export default function App() {
               </a>
               <div className={toggle ? "navbar-links-active" : "navbar-links"}>
                 <ul>
-                  <li>
-                    <a
-                      onClick={() => setNavContext("Starter", "Starters")}
-                      className="nav-link"
-                      href="/"
-                    >
-                      Home
-                    </a>
-                  </li>
                   <li>
                     <a
                       onClick={() => setNavContext("Starter", "Starters")}

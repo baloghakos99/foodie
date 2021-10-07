@@ -34,6 +34,7 @@ body {
 .title {
   font-size: 2rem;
   margin: 0.5rem;
+  margin-left: 20px;
   color: white;
   /* margin-left: 2rem; */
   background-color: rgb(255, 196, 87);
@@ -156,6 +157,7 @@ body {
 .pageButtons {
   display: flex;
   height: 50px;
+  margin-left: 5px;
 }
 /* --------------------- */
 
@@ -298,6 +300,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     background-color: rgb(238, 238, 238);
   }
+
   .dishes-title {
     text-align: center;
   }
@@ -340,6 +343,12 @@ body {
 }
 
 @media screen and (max-width: 750px) {
+  .title {
+    font-size: 2rem;
+    margin: 0.5rem;
+    color: white;
+    background-color: rgb(255, 196, 87);
+  }
   .toggle-button {
     display: flex;
   }

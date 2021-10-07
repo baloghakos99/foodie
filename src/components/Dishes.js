@@ -21,6 +21,24 @@ function Dishes() {
   const urlStart = `https://api.edamam.com/api/recipes/v2?type=public&app_id=c3600678&app_key=073352dcbd07fab1305f749d001d4b83`;
 
   useEffect(() => {
+    if (localStorage.nav === "Desserts") {
+      setTitle("Desserts");
+    }
+    if (localStorage.nav === "Starter") {
+      setTitle("Starters");
+    }
+    if (localStorage.nav === "Soup") {
+      setTitle("Soups");
+    }
+    if (localStorage.nav === "Main%20course") {
+      setTitle("Main  courses");
+    }
+    if (localStorage.nav === "Drinks") {
+      setTitle("Drinks");
+    }
+  }, [title]);
+
+  useEffect(() => {
     if (recipes.from === 1) {
       setPrev(false);
     }
@@ -287,6 +305,7 @@ function Dishes() {
       <h1 className="dishes-title">
         {title === "" ? JSON.parse(localStorage.title) : title}
       </h1>
+
       <div className="control">
         <div className="pageButtons">
           <button
