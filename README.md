@@ -13,10 +13,10 @@
 ## Tools
 
 - React
-  -- React Hooks
-  -- React Router
+  - React Hooks
+  - React Router
 - CSS
-  -- Responsive design
+  - Responsive design
 
 ## Install & Start
 
