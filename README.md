@@ -2,9 +2,7 @@
 
 ###### https://foodie-ba.netlify.app/
 
-##### This is my first web application I started with the goal of learning new tools during programming. This application is based on fetching data from a recipe API.
-
-##### Retrieving data from a recipe API using react hooks. Navigating between different pages using react router.Using localStorage to preserve data when the page is refreshed.
+##### This is my first web application I started with the goal of learning new tools during programming. This application is based on retrieving data from a recipe API using react hooks. Navigating between different pages using react router. Using localStorage to preserve data when the page is refreshed.
 
 ## Features
 
