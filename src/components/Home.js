@@ -19,33 +19,6 @@ export default function Home() {
       );
       localStorage.setItem("fetches", JSON.stringify(fetches));
     }
-    // if (performance.navigation.type === 1) {
-    //   fetch(JSON.parse(localStorage.getItem("lastFetch")))
-    //     .then(function (response) {
-    //       return response.json();
-    //     })
-    //     .then((recipes) => {
-    //       let hits = recipes.hits.map((recipe) => {
-    //         let id = recipe.recipe.uri.split("#")[1].split("_")[1];
-    //         return { ...recipe, id: id };
-    //       });
-    //       recipes.hits = hits;
-    //       setRecipes(recipes);
-
-    //       let savedFetches = JSON.parse(localStorage.getItem("fetches"));
-
-    //       setFetches(savedFetches);
-
-    //       if (localStorage.fetches.length > 1) {
-    //         setPrev(true);
-    //       }
-
-    //       // setFetches([
-    //       //   ...fetches,
-    //       //   JSON.parse(localStorage.getItem("lastFetch")),
-    //       // ]);
-    //     });
-    // }
   }, [fetches]);
 
   useEffect(() => {
